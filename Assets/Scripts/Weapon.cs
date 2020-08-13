@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
   [SerializeField] float damage = 30f;
   [SerializeField] ParticleSystem muzzleFlash;
   [SerializeField] AudioClip shotSound;
+  [SerializeField] GameObject hitEffect;
   AudioSource audioSource;
   
     void Start() {
@@ -44,16 +45,19 @@ public class Weapon : MonoBehaviour
     RaycastHit hit;
     if (Physics.Raycast(FPcamera.transform.position, FPcamera.transform.forward, out hit, range))
     {
-      Debug.Log("hit this object: " + hit.transform.name);
+      CreateHitImpact(hit);
       EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-      // todo add hit effects
       if (target == null) { return; }
       target.TakeDamage(damage);
-
     }
     else
     {
       return;
     }
+  }
+
+  private void CreateHitImpact(RaycastHit hit) {
+    GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+    Destroy(impact, 0.1f);
   }
 }

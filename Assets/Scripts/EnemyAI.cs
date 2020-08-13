@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
   [SerializeField] float chaseRange = 5f;
   NavMeshAgent navMeshAgent;
   float distanceToTarget = Mathf.Infinity;
-  bool isProvoked = false;
+  public bool isProvoked = false;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -25,10 +25,10 @@ public class EnemyAI : MonoBehaviour
     {
       distanceToTarget = Vector3.Distance(target.position, transform.position);
 
-      if (distanceToTarget > chaseRange) {
-        isProvoked = false;
-      }
-      
+      //if (distanceToTarget > chaseRange && isProvoked) {
+        //isProvoked = false;
+      //}
+
       if (isProvoked) {
         EngageTarget();
       } else if (distanceToTarget <= chaseRange) {
@@ -46,9 +46,11 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void ChaseTarget() {
+      GetComponent<Animator>().SetBool("attack", false);
+      GetComponent<Animator>().SetTrigger("move");
       navMeshAgent.SetDestination(target.position);
     }
     private void AttackTarget() {
-      print("attacking");
+      GetComponent<Animator>().SetBool("attack", true);
     }
 }
