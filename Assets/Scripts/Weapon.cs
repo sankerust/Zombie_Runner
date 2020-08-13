@@ -9,6 +9,12 @@ public class Weapon : MonoBehaviour
   [SerializeField] float range = 100f;
   [SerializeField] float damage = 30f;
   [SerializeField] ParticleSystem muzzleFlash;
+  [SerializeField] AudioClip shotSound;
+  AudioSource audioSource;
+  
+    void Start() {
+      audioSource = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1")) {
@@ -19,8 +25,13 @@ public class Weapon : MonoBehaviour
     private void Shoot()
   {
     PlayMuzzleFlash();
+    PlaySoundFx();
     ProcessRayCast();
+  }
 
+  private void PlaySoundFx() {
+    audioSource.PlayOneShot(shotSound);
+    audioSource.PlayDelayed(0.3f);
   }
 
   private void PlayMuzzleFlash()
