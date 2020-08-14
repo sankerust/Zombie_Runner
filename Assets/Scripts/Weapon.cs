@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
   [SerializeField] ParticleSystem muzzleFlash;
   [SerializeField] AudioClip shotSound;
   [SerializeField] GameObject hitEffect;
+  
   AudioSource audioSource;
   
     void Start() {

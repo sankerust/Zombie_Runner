@@ -8,9 +8,11 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
 public void ReloadGame() {
   SceneManager.LoadScene(0);
+  Time.timeScale = 1;
 }
 
 public void QuitGame() {
+  // if doesnt quit - might have to do with timescale set to 0
   Application.Quit();
 }
 }
