@@ -1078,7 +1078,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.78048e-39, y: 1.37753e-40, z: 1.7907922e-38, w: 9.1835e-41}
+  m_BoundingSphereOverride: {x: 9.1837e-41, y: 8.5e-44, z: 9.7e-44, w: 2.2e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2770,62 +2770,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2543668705441144178, guid: 38e7d826dc20df544a9b2a44c849e923,
+    - target: {fileID: 2543668703739386536, guid: 38e7d826dc20df544a9b2a44c849e923,
         type: 3}
-      propertyPath: movementSettings.ForwardSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543668705441144178, guid: 38e7d826dc20df544a9b2a44c849e923,
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 2543668704936845973}
+    - target: {fileID: 2543668703739386536, guid: 38e7d826dc20df544a9b2a44c849e923,
         type: 3}
-      propertyPath: movementSettings.BackwardSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543668705441144178, guid: 38e7d826dc20df544a9b2a44c849e923,
+      propertyPath: dryFireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 73903f88a2b15da43af73a8abb1ded59, type: 3}
+    - target: {fileID: 2543668704936845972, guid: 38e7d826dc20df544a9b2a44c849e923,
         type: 3}
-      propertyPath: movementSettings.StrafeSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543668705441144178, guid: 38e7d826dc20df544a9b2a44c849e923,
-        type: 3}
-      propertyPath: movementSettings.JumpForce
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2543668705450764982, guid: 38e7d826dc20df544a9b2a44c849e923,
-        type: 3}
-      propertyPath: field of view
-      value: 65
-      objectReference: {fileID: 0}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 563767639}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e7d826dc20df544a9b2a44c849e923, type: 3}
---- !u!1 &2543668704936845971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2543668705451354256, guid: 38e7d826dc20df544a9b2a44c849e923,
+--- !u!114 &2543668704936845973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2543668704936845973, guid: 38e7d826dc20df544a9b2a44c849e923,
     type: 3}
   m_PrefabInstance: {fileID: 2543668704936845970}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2543668704936845972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543668704936845971}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d55e80d9c40464439077f46bc0d67d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 84d334e9d00d1864893512a52a954f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverCanvas: {fileID: 563767639}
---- !u!114 &2543668704936845977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543668704936845971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9333b3e182ba40d4c8bb1190724f88a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fov: 0

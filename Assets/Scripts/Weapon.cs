@@ -10,8 +10,9 @@ public class Weapon : MonoBehaviour
   [SerializeField] float damage = 30f;
   [SerializeField] ParticleSystem muzzleFlash;
   [SerializeField] AudioClip shotSound;
+  [SerializeField] AudioClip dryFireSound;
   [SerializeField] GameObject hitEffect;
-  
+  [SerializeField] Ammo ammoSlot;
   AudioSource audioSource;
   
     void Start() {
@@ -26,9 +27,15 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
   {
-    PlayMuzzleFlash();
-    PlaySoundFx();
-    ProcessRayCast();
+    if (ammoSlot.GetAmmoAmount() > 0) {
+      PlayMuzzleFlash();
+      ProcessRayCast();
+      PlaySoundFx();
+      ammoSlot.ReduceCurrentAmmo();
+    } else {
+      print("out of ammo");
+      audioSource.PlayOneShot(dryFireSound);
+    }
   }
 
   private void PlaySoundFx() {
