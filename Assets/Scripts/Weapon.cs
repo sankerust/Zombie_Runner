@@ -13,10 +13,12 @@ public class Weapon : MonoBehaviour
   [SerializeField] AudioClip dryFireSound;
   [SerializeField] GameObject hitEffect;
   [SerializeField] Ammo ammoSlot;
+  [SerializeField] int magazineSize;
   [SerializeField] float timeBetweenShots = 0.5f;
   [SerializeField] float audioSourceDelay = 0.5f;
   AudioSource audioSource;
   bool canShoot = true;
+  int shotsFired = 0;
   
     void Start() {
       audioSource = GetComponent<AudioSource>();
