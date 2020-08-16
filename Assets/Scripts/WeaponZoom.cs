@@ -8,14 +8,15 @@ public class WeaponZoom : MonoBehaviour
   [SerializeField] float AdsFov = 35f;
   [SerializeField] float zoomOutSensitivity = 2f;
   [SerializeField] float zoomInSensitivity = 0.5f;
+  [SerializeField] RigidbodyFirstPersonController FpsController;
   bool AimDownSight = false;
   float initialFov;
-  RigidbodyFirstPersonController FpsController;
+  
     // Start is called before the first frame update
     void Start()
     {
       initialFov = Camera.main.fieldOfView;
-      FpsController = GetComponent<RigidbodyFirstPersonController>();
+      //FpsController = GetComponent<RigidbodyFirstPersonController>();
     }
 
 

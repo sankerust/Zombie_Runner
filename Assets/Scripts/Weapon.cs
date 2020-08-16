@@ -13,34 +13,40 @@ public class Weapon : MonoBehaviour
   [SerializeField] AudioClip dryFireSound;
   [SerializeField] GameObject hitEffect;
   [SerializeField] Ammo ammoSlot;
+  [SerializeField] float timeBetweenShots = 0.5f;
+  [SerializeField] float audioSourceDelay = 0.5f;
   AudioSource audioSource;
+  bool canShoot = true;
   
     void Start() {
       audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) {
-          Shoot();
+        if (Input.GetMouseButtonDown(0) && canShoot == true) {
+          StartCoroutine(Shoot());
         }
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
   {
+    canShoot = false;
     if (ammoSlot.GetAmmoAmount() > 0) {
       PlayMuzzleFlash();
       ProcessRayCast();
       PlaySoundFx();
       ammoSlot.ReduceCurrentAmmo();
     } else {
-      print("out of ammo");
       audioSource.PlayOneShot(dryFireSound);
     }
+
+    yield return new WaitForSeconds(timeBetweenShots);
+    canShoot = true;
   }
 
   private void PlaySoundFx() {
     audioSource.PlayOneShot(shotSound);
-    audioSource.PlayDelayed(0.3f);
+    audioSource.PlayDelayed(audioSourceDelay);
   }
 
   private void PlayMuzzleFlash()

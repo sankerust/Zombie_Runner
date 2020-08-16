@@ -27,9 +27,9 @@ public class EnemyAI : MonoBehaviour
     {
       distanceToTarget = Vector3.Distance(target.position, transform.position);
 
-      if (distanceToTarget > chaseRange * 2) {
-        isProvoked = false;
-      }
+      //if (distanceToTarget > chaseRange * 2) {
+        //isProvoked = false;
+      //}
 
       if (isProvoked) {
         EngageTarget();
