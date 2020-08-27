@@ -174,7 +174,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d334e9d00d1864893512a52a954f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 100
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 50
+  - ammoType: 1
+    ammoAmount: 3
+  - ammoType: 2
+    ammoAmount: 20
 --- !u!1 &2543668705451354258
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a699e2d9323764d9f6f7e864c2698e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: 0
+  currentWeapon: 1
 --- !u!1001 &670199248211919771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -445,16 +451,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3293784774106342917, guid: f0a6dce53ef5e5d44899e0b4d2311a0f,
+    - target: {fileID: 8016552184330148024, guid: f0a6dce53ef5e5d44899e0b4d2311a0f,
         type: 3}
-      propertyPath: FPcamera
-      value: 
-      objectReference: {fileID: 2543668705450764982}
-    - target: {fileID: 3293784774106342917, guid: f0a6dce53ef5e5d44899e0b4d2311a0f,
-        type: 3}
-      propertyPath: ammoSlot
-      value: 
-      objectReference: {fileID: 2543668704936845973}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8016552184330148024, guid: f0a6dce53ef5e5d44899e0b4d2311a0f,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -475,10 +476,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.22998326
       objectReference: {fileID: 0}
-    - target: {fileID: 8016552184330148024, guid: f0a6dce53ef5e5d44899e0b4d2311a0f,
+    - target: {fileID: 3293784774106342917, guid: f0a6dce53ef5e5d44899e0b4d2311a0f,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.05
+      propertyPath: FPcamera
+      value: 
+      objectReference: {fileID: 2543668705450764982}
+    - target: {fileID: 3293784774106342917, guid: f0a6dce53ef5e5d44899e0b4d2311a0f,
+        type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 2543668704936845973}
+    - target: {fileID: 3293784774106342917, guid: f0a6dce53ef5e5d44899e0b4d2311a0f,
+        type: 3}
+      propertyPath: audioSourceDelay
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0a6dce53ef5e5d44899e0b4d2311a0f, type: 3}
@@ -543,10 +554,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 830706055, guid: 930c2cf00d792e54fb886c57ff9b9dd2, type: 3}
-      propertyPath: FpsController
-      value: 
-      objectReference: {fileID: 2543668705441144178}
     - target: {fileID: 830706056, guid: 930c2cf00d792e54fb886c57ff9b9dd2, type: 3}
       propertyPath: FPcamera
       value: 
@@ -556,9 +563,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1256836514301624886}
     - target: {fileID: 830706056, guid: 930c2cf00d792e54fb886c57ff9b9dd2, type: 3}
+      propertyPath: shotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 595bb0a739b69b14eb4b82ee8c7922a8, type: 3}
+    - target: {fileID: 830706056, guid: 930c2cf00d792e54fb886c57ff9b9dd2, type: 3}
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 2543668704936845973}
+    - target: {fileID: 830706055, guid: 930c2cf00d792e54fb886c57ff9b9dd2, type: 3}
+      propertyPath: FpsController
+      value: 
+      objectReference: {fileID: 2543668705441144178}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930c2cf00d792e54fb886c57ff9b9dd2, type: 3}
 --- !u!4 &2548106570300937907 stripped

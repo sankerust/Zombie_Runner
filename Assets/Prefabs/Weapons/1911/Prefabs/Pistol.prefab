@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6098948191919252932}
   - component: {fileID: 3293784774106342917}
   m_Layer: 0
-  m_Name: Low_Poly_153
+  m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   hitEffect: {fileID: 8833943293630059211, guid: ae2852ccd3a68654bba02e680fc55c1e,
     type: 3}
   ammoSlot: {fileID: 0}
+  ammoType: 0
   magazineSize: 0
   timeBetweenShots: 0.1
   audioSourceDelay: 0.6
