@@ -13,12 +13,17 @@ public class Weapon : MonoBehaviour
   [SerializeField] AudioClip dryFireSound;
   [SerializeField] GameObject hitEffect;
   [SerializeField] Ammo ammoSlot;
+  [SerializeField] AmmoType ammoType;
   [SerializeField] int magazineSize;
   [SerializeField] float timeBetweenShots = 0.5f;
   [SerializeField] float audioSourceDelay = 0.5f;
   AudioSource audioSource;
   bool canShoot = true;
   int shotsFired = 0;
+
+  private void OnEnable() {
+    canShoot = true;
+  }
   
     void Start() {
       audioSource = GetComponent<AudioSource>();
@@ -33,11 +38,11 @@ public class Weapon : MonoBehaviour
     IEnumerator Shoot()
   {
     canShoot = false;
-    if (ammoSlot.GetAmmoAmount() > 0) {
+    if (ammoSlot.GetAmmoAmount(ammoType) > 0) {
       PlayMuzzleFlash();
       ProcessRayCast();
       PlaySoundFx();
-      ammoSlot.ReduceCurrentAmmo();
+      ammoSlot.ReduceCurrentAmmo(ammoType);
     } else {
       audioSource.PlayOneShot(dryFireSound);
     }

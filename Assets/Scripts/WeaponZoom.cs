@@ -11,31 +11,40 @@ public class WeaponZoom : MonoBehaviour
   [SerializeField] RigidbodyFirstPersonController FpsController;
   bool AimDownSight = false;
   float initialFov;
-  
-    // Start is called before the first frame update
+
     void Start()
     {
       initialFov = Camera.main.fieldOfView;
       //FpsController = GetComponent<RigidbodyFirstPersonController>();
     }
 
-
-    // Update is called once per frame
+    private void OnDisable() {
+      ZoomOut();
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(1)) {
           if (AimDownSight == false) {
-            AimDownSight = true;
-            Camera.main.fieldOfView = AdsFov;
-            FpsController.mouseLook.XSensitivity = zoomInSensitivity;
-            FpsController.mouseLook.YSensitivity = zoomInSensitivity;
+            ZoomIn();
           } else {
-            
-            AimDownSight = false;
-            Camera.main.fieldOfView = initialFov;
-            FpsController.mouseLook.XSensitivity = zoomOutSensitivity;
-            FpsController.mouseLook.YSensitivity = zoomOutSensitivity;
-          }
-      }
+            ZoomOut();
+                }
     }
+    }
+
+  private void ZoomOut()
+  {
+    AimDownSight = false;
+    Camera.main.fieldOfView = initialFov;
+    FpsController.mouseLook.XSensitivity = zoomOutSensitivity;
+    FpsController.mouseLook.YSensitivity = zoomOutSensitivity;
+  }
+
+  private void ZoomIn()
+  {
+    AimDownSight = true;
+    Camera.main.fieldOfView = AdsFov;
+    FpsController.mouseLook.XSensitivity = zoomInSensitivity;
+    FpsController.mouseLook.YSensitivity = zoomInSensitivity;
+  }
 }

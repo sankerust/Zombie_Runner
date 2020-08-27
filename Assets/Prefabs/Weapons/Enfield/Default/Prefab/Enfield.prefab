@@ -557,6 +557,7 @@ MonoBehaviour:
   hitEffect: {fileID: 8833943293630059211, guid: ae2852ccd3a68654bba02e680fc55c1e,
     type: 3}
   ammoSlot: {fileID: 0}
+  ammoType: 2
   magazineSize: 0
   timeBetweenShots: 4
   audioSourceDelay: 0.5

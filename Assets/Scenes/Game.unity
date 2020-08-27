@@ -1469,7 +1469,7 @@ GameObject:
   - component: {fileID: 1002957238}
   - component: {fileID: 1002957237}
   m_Layer: 0
-  m_Name: You Dead Text
+  m_Name: You Died Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1515,7 +1515,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: You dead
+  m_text: You died
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 325e9a385c71cc04bac72499a15ae383, type: 2}
   m_sharedMaterial: {fileID: 5152910924654358586, guid: 325e9a385c71cc04bac72499a15ae383,
@@ -3006,6 +3006,71 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514125786786030079, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: currentWeapon
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543668704936845973, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: ammoSlots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543668704936845973, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: ammoSlots.Array.data[0].ammoAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543668704936845973, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543668704936845973, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543668704936845973, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543668704936845973, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoAmount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2664118217426150814, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: audioSourceDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2664118217426150814, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: defaultFov
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543668703674151011, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: audioSourceDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543668703674151011, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: shotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 595bb0a739b69b14eb4b82ee8c7922a8, type: 3}
+    - target: {fileID: 2543668703674151011, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: defaultFov
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085849291265430240, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: defaultFov
+      value: 65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e7d826dc20df544a9b2a44c849e923, type: 3}
