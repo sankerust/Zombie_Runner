@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2543668704936845973}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,11 +176,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoSlots:
   - ammoType: 0
-    ammoAmount: 50
+    ammoAmount: 6
   - ammoType: 1
-    ammoAmount: 3
+    ammoAmount: 2
   - ammoType: 2
-    ammoAmount: 20
+    ammoAmount: 2
 --- !u!1 &2543668705451354258
 GameObject:
   m_ObjectHideFlags: 0
