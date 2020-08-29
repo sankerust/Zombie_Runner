@@ -9,11 +9,13 @@ public class EnemyAI : MonoBehaviour
   [SerializeField] float chaseRange = 5f;
   [SerializeField] float turnSpeed = 5f;
   NavMeshAgent navMeshAgent;
+  EnemyHealth health;
   float distanceToTarget = Mathf.Infinity;
   bool isProvoked = false;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<EnemyHealth>();
         target = FindObjectOfType<PlayerHealth>().transform;
     }
 
@@ -25,6 +27,10 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+      if (health.IsDead()) {
+        enabled = false;
+        navMeshAgent.enabled = false;
+      }
       distanceToTarget = Vector3.Distance(target.position, transform.position);
 
       //if (distanceToTarget > chaseRange * 2) {
@@ -38,7 +44,9 @@ public class EnemyAI : MonoBehaviour
       }
     }
 
+
     public void OnTakenDamage() {
+      GetComponent<Animator>().SetTrigger("damageTaken");
       isProvoked = true;
     }
 
@@ -56,6 +64,7 @@ public class EnemyAI : MonoBehaviour
       GetComponent<Animator>().SetBool("attack", false);
       GetComponent<Animator>().SetTrigger("move");
       navMeshAgent.SetDestination(target.position);
+      Debug.Log(navMeshAgent.steeringTarget);
     }
 
     private void AttackTarget() {
