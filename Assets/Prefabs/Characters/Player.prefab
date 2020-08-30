@@ -176,11 +176,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoSlots:
   - ammoType: 0
-    ammoAmount: 6
+    ammoAmount: 10
   - ammoType: 1
-    ammoAmount: 2
+    ammoAmount: 10
   - ammoType: 2
-    ammoAmount: 2
+    ammoAmount: 20
 --- !u!1 &2543668705451354258
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,10 +559,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2543668705450764982}
     - target: {fileID: 830706056, guid: 930c2cf00d792e54fb886c57ff9b9dd2, type: 3}
-      propertyPath: muzzleFlash
-      value: 
-      objectReference: {fileID: 1256836514301624886}
-    - target: {fileID: 830706056, guid: 930c2cf00d792e54fb886c57ff9b9dd2, type: 3}
       propertyPath: shotSound
       value: 
       objectReference: {fileID: 8300000, guid: 595bb0a739b69b14eb4b82ee8c7922a8, type: 3}
@@ -659,17 +655,21 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 2543668704936845973}
+    - target: {fileID: 7386870727523565032, guid: 7d6d6a8f9e5e62d45ae99aa283b89a20,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.3510647e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386870727523565032, guid: 7d6d6a8f9e5e62d45ae99aa283b89a20,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 2.3510647e-38
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d6d6a8f9e5e62d45ae99aa283b89a20, type: 3}
 --- !u!4 &4087360905820139185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 571609115304590252, guid: 7d6d6a8f9e5e62d45ae99aa283b89a20,
-    type: 3}
-  m_PrefabInstance: {fileID: 4564392040542016797}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1256836514301624886 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3325578772636292907, guid: 7d6d6a8f9e5e62d45ae99aa283b89a20,
     type: 3}
   m_PrefabInstance: {fileID: 4564392040542016797}
   m_PrefabAsset: {fileID: 0}
