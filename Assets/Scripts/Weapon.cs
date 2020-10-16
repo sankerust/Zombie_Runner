@@ -40,7 +40,7 @@ public class Weapon : MonoBehaviour
 
     private void DisplayAmmo() {
       int currentAmmo = ammoSlot.GetAmmoAmount(ammoType);
-      ammoText.text = currentAmmo.ToString();
+      ammoText.text = "ammo left: " + currentAmmo.ToString();
     }
 
     IEnumerator Shoot()

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FlashLight : MonoBehaviour
 {
   [SerializeField] float lightDecay = 0.05f;
   [SerializeField] float angleDecay = 0.5f;
   [SerializeField] float minAngle = 40f;
+  [SerializeField] TextMeshProUGUI chargeText;
 
   Light myLight;
 
@@ -17,6 +19,7 @@ public class FlashLight : MonoBehaviour
   private void Update() {
     DecreaseLightAngle();
     DecreaseLightIntensity();
+    chargeText.text = "charge: " + (Mathf.FloorToInt(myLight.intensity) * 20).ToString() + "%";
   }
 
   public void RestoreLightAngle(float restoreAngle) {
