@@ -103,8 +103,8 @@ GameObject:
   - component: {fileID: 6390393540889363142}
   - component: {fileID: 1029660915355131904}
   - component: {fileID: 810164143827487532}
-  - component: {fileID: 5527400420495991891}
   - component: {fileID: 7934878743196403509}
+  - component: {fileID: 5815645556895537094}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Untagged
@@ -3872,20 +3872,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8484999120720015659}
   m_Mesh: {fileID: 0}
---- !u!64 &5527400420495991891
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8484999120720015659}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!114 &7934878743196403509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3898,5 +3884,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b375eb743fd04844c8a7d15b6673f6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restoreAngle: 70
-  intensityAmount: 5
+  restoreAngle: 80
+  intensityAmount: 2
+--- !u!65 &5815645556895537094
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8484999120720015659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
