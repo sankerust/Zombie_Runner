@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: dbf0c53ab32e9c64c8be6f5226c3c4b1, type: 2}
   m_HaloStrength: 0.5
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.016
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.016}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -48,7 +48,7 @@ LightmapSettings:
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
-    m_IndirectOutputScale: 1
+    m_IndirectOutputScale: 0.57
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
@@ -396,6 +396,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 87787952984017029, guid: f1a25c06a6e2e9e4fa814ef21777b069,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.4213088e+12
+      objectReference: {fileID: 0}
+    - target: {fileID: 87787952984017029, guid: f1a25c06a6e2e9e4fa814ef21777b069,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 7.52e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 87787952984017029, guid: f1a25c06a6e2e9e4fa814ef21777b069,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 2.4213088e+12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1a25c06a6e2e9e4fa814ef21777b069, type: 3}
 --- !u!1001 &292491763
@@ -628,11 +643,11 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 190
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1711,8 +1726,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.2701056e+31, y: 2.7088265e+23, z: 2.4833134e+27,
-    w: 1.7213225e+22}
+  m_BoundingSphereOverride: {x: 0, y: 3e-45, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -7323,6 +7337,10 @@ PrefabInstance:
       propertyPath: angleDecay
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2115644410, guid: 38e7d826dc20df544a9b2a44c849e923, type: 3}
+      propertyPath: chargeText
+      value: 
+      objectReference: {fileID: 1657992709}
     - target: {fileID: 2543668704936845973, guid: 38e7d826dc20df544a9b2a44c849e923,
         type: 3}
       propertyPath: ammoSlots.Array.data[0].ammoAmount
@@ -7342,6 +7360,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6472963124564945141, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6472963124564945141, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6472963124564945141, guid: 38e7d826dc20df544a9b2a44c849e923,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 1.2010563e-38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e7d826dc20df544a9b2a44c849e923, type: 3}

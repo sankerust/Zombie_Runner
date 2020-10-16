@@ -15,6 +15,7 @@ MonoBehaviour:
   lightDecay: 0.1
   angleDecay: 1
   minAngle: 30
+  chargeText: {fileID: 0}
 --- !u!1 &2543668705451354256
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,17 +736,17 @@ PrefabInstance:
     - target: {fileID: 602971078912670176, guid: 8e00631650f078147b444d9da9d437ee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.57
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 602971078912670176, guid: 8e00631650f078147b444d9da9d437ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.167
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 602971078912670176, guid: 8e00631650f078147b444d9da9d437ee,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.18
+      value: -1.07
       objectReference: {fileID: 0}
     - target: {fileID: 602971078912670176, guid: 8e00631650f078147b444d9da9d437ee,
         type: 3}
