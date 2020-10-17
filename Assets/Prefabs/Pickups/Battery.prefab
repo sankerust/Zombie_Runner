@@ -3886,7 +3886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restoreAngle: 80
   intensityAmount: 2
-  pickupSound: {fileID: 8300000, guid: 8eb2e85f814ef0841bd83bfe3f1c29e1, type: 3}
+  pickupSound: {fileID: 8300000, guid: 85f1266eb89c79f40b22d3684b0ebed6, type: 3}
 --- !u!65 &5815645556895537094
 BoxCollider:
   m_ObjectHideFlags: 0
