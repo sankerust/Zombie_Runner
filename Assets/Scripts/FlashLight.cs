@@ -9,11 +9,21 @@ public class FlashLight : MonoBehaviour
   [SerializeField] float angleDecay = 0.5f;
   [SerializeField] float minAngle = 40f;
   [SerializeField] TextMeshProUGUI chargeText;
+  [SerializeField] AudioClip clickSound;
+  AudioSource audioSource;
 
   Light myLight;
 
   private void Start() {
     myLight = GetComponent<Light>();
+    audioSource = GetComponent<AudioSource>();
+  }
+
+  public void SwitchLight() {
+    bool isEnabled = myLight.enabled;
+    myLight.enabled = !isEnabled;
+    audioSource.clip = clickSound;
+    audioSource.Play();
   }
 
   private void Update() {

@@ -15,8 +15,12 @@ public class DeathHandler : MonoBehaviour
     FindObjectOfType<WeaponSwitcher>().enabled = false;
     Cursor.lockState = CursorLockMode.None;
     Cursor.visible = true;
-
     gameOverCanvas.enabled = true;
+    AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
+    foreach (AudioSource audio in allAudioSources)
+    {
+        audio.Stop();
+    } 
   }
 
 }
