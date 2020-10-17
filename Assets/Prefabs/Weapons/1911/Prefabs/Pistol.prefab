@@ -195,6 +195,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 8292583808570146807}
   shotSound: {fileID: 8300000, guid: a6c8c61a9eedced458693bd3206c9911, type: 3}
   dryFireSound: {fileID: 8300000, guid: 73903f88a2b15da43af73a8abb1ded59, type: 3}
+  reloadSound: {fileID: 0}
+  shellCasingSound: {fileID: 0}
   hitEffect: {fileID: 8833943293630059211, guid: ae2852ccd3a68654bba02e680fc55c1e,
     type: 3}
   ammoSlot: {fileID: 0}
@@ -202,6 +204,8 @@ MonoBehaviour:
   magazineSize: 0
   timeBetweenShots: 0.1
   audioSourceDelay: 0.6
+  reloadTime: 2
+  ammoText: {fileID: 0}
 --- !u!1001 &4700994614663229099
 PrefabInstance:
   m_ObjectHideFlags: 0

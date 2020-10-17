@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
   Transform target;
   [SerializeField] float chaseRange = 5f;
   [SerializeField] float turnSpeed = 5f;
+  [SerializeField] GameObject patrolLocation1;
+  [SerializeField] GameObject patrolLocation2;
   NavMeshAgent navMeshAgent;
   EnemyHealth health;
   float distanceToTarget = Mathf.Infinity;
@@ -17,6 +19,7 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
         target = FindObjectOfType<PlayerHealth>().transform;
+        
     }
 
     void OnDrawGizmosSelected()
@@ -27,6 +30,8 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+    Patrol();
+    Debug.Log(navMeshAgent.stoppingDistance);
       if (health.IsDead()) {
         enabled = false;
         navMeshAgent.enabled = false;
@@ -41,6 +46,7 @@ public class EnemyAI : MonoBehaviour
         EngageTarget();
       } else if (distanceToTarget <= chaseRange) {
         isProvoked = true;
+        navMeshAgent.speed = 3f;
       }
     }
 
@@ -48,6 +54,23 @@ public class EnemyAI : MonoBehaviour
     public void OnTakenDamage() {
       GetComponent<Animator>().SetTrigger("damageTaken");
       isProvoked = true;
+      navMeshAgent.speed = 3f;
+    }
+    private void Patrol() {
+      if (!isProvoked && patrolLocation1 != null) {
+        GetComponent<Animator>().SetTrigger("move");
+        navMeshAgent.SetDestination(patrolLocation1.transform.position);
+
+        if (patrolLocation2 != null && Vector3.Distance(transform.position, patrolLocation1.transform.position) <= navMeshAgent.stoppingDistance * 2) 
+        {
+          navMeshAgent.SetDestination(patrolLocation2.transform.position);
+          
+          if (Vector3.Distance(transform.position, patrolLocation2.transform.position) <= navMeshAgent.stoppingDistance * 2) {
+          navMeshAgent.SetDestination(patrolLocation1.transform.position);
+          }
+        }
+      }
+
     }
 
     private void EngageTarget() {
