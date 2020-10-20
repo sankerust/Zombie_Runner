@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
   [SerializeField] AudioClip dryFireSound;
   [SerializeField] AudioClip reloadSound;
   [SerializeField] AudioClip shellCasingSound;
+  [SerializeField] AudioClip switchSound;
   [SerializeField] GameObject hitEffect;
   [SerializeField] Ammo ammoSlot;
   [SerializeField] AmmoType ammoType;
@@ -29,17 +30,28 @@ public class Weapon : MonoBehaviour
   int loadedAmmo;
 
   private void OnEnable() {
-    canShoot = true;
+    //audioSource.clip = switchSound;
+    audioSource.PlayOneShot(switchSound);
+    StartCoroutine(SwitchShootDelay());
     isReloading = false;
   }
+
+
   
     void Start() {
       audioSource = GetComponent<AudioSource>();
     }
+
+  IEnumerator SwitchShootDelay()
+  {
+    canShoot = false;
+    yield return new WaitForSeconds(switchSound.length);
+    canShoot = true;
+  }
     void Update()
     {
       if (!isReloading) {
-      if (Input.GetKeyDown("r") && ammoSlot.GetAmmoAmount(ammoType) > 0)
+      if (Input.GetKeyDown("r") && ammoSlot.GetAmmoAmount(ammoType) > 0 && loadedAmmo != magazineSize)
       {
         StartCoroutine(StartReload());
         return;
@@ -48,6 +60,7 @@ public class Weapon : MonoBehaviour
       {
         StartCoroutine(Shoot());
       }
+      } else {
       }
       DisplayAmmo();
 
@@ -81,16 +94,21 @@ public class Weapon : MonoBehaviour
     
     int needToLoad = magazineSize - loadedAmmo;
     int ammoLeft = ammoSlot.GetAmmoAmount(ammoType);
-    if (ammoLeft >= needToLoad) {
-      loadedAmmo += needToLoad;
-      ammoSlot.ReduceCurrentAmmo(ammoType, needToLoad);
-    } else {
-      loadedAmmo += ammoLeft;
-      ammoSlot.ReduceCurrentAmmo(ammoType, ammoLeft);
-    }
+    
 
     reloadTime = audioSource.clip.length;
     yield return new WaitForSeconds(reloadTime);
+
+    if (ammoLeft >= needToLoad)
+    {
+      loadedAmmo += needToLoad;
+      ammoSlot.ReduceCurrentAmmo(ammoType, needToLoad);
+    }
+    else
+    {
+      loadedAmmo += ammoLeft;
+      ammoSlot.ReduceCurrentAmmo(ammoType, ammoLeft);
+    }
 
     canShoot = true;
     isReloading = false;
