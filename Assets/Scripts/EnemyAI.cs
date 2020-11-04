@@ -10,16 +10,22 @@ public class EnemyAI : MonoBehaviour
   [SerializeField] float turnSpeed = 5f;
   [SerializeField] GameObject patrolLocation1;
   [SerializeField] GameObject patrolLocation2;
+  [SerializeField] AudioClip idleSound;
+  [SerializeField] AudioClip provokedSound;
+  AudioSource audioSource;
+
   NavMeshAgent navMeshAgent;
   EnemyHealth health;
   float distanceToTarget = Mathf.Infinity;
-  bool isProvoked = false;
+  [SerializeField] bool isProvoked = false;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
         target = FindObjectOfType<PlayerHealth>().transform;
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = idleSound;
+        audioSource.PlayDelayed(Random.Range(0f, 3f));
     }
 
     void OnDrawGizmosSelected()
@@ -31,7 +37,6 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
     Patrol();
-    Debug.Log(navMeshAgent.stoppingDistance);
       if (health.IsDead()) {
         enabled = false;
         navMeshAgent.enabled = false;
@@ -46,13 +51,13 @@ public class EnemyAI : MonoBehaviour
         EngageTarget();
       } else if (distanceToTarget <= chaseRange) {
         isProvoked = true;
-        navMeshAgent.speed = 3f;
+        navMeshAgent.speed = navMeshAgent.speed * 2;
       }
     }
 
 
     public void OnTakenDamage() {
-      GetComponent<Animator>().SetTrigger("damageTaken");
+      //GetComponent<Animator>().SetTrigger("damageTaken");
       isProvoked = true;
       navMeshAgent.speed = 3f;
     }
@@ -74,6 +79,12 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void EngageTarget() {
+      if (audioSource.clip != provokedSound) {
+      audioSource.Stop();
+      audioSource.clip = provokedSound;
+      audioSource.Play();
+      }
+      
       FaceTarget();
       if (distanceToTarget > navMeshAgent.stoppingDistance) {
         ChaseTarget();

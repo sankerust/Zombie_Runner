@@ -9,6 +9,9 @@ public class WeaponZoom : MonoBehaviour
   [SerializeField] float zoomOutSensitivity = 2f;
   [SerializeField] float zoomInSensitivity = 0.5f;
   [SerializeField] RigidbodyFirstPersonController FpsController;
+  [SerializeField] Canvas reticle;
+  [SerializeField] Canvas scope;
+
   bool AimDownSight = false;
   float initialFov;
 
@@ -20,6 +23,8 @@ public class WeaponZoom : MonoBehaviour
 
     private void OnDisable() {
       ZoomOut();
+      reticle.enabled = true;
+      scope.enabled = false;
     }
     void Update()
     {
@@ -38,6 +43,8 @@ public class WeaponZoom : MonoBehaviour
     Camera.main.fieldOfView = initialFov;
     FpsController.mouseLook.XSensitivity = zoomOutSensitivity;
     FpsController.mouseLook.YSensitivity = zoomOutSensitivity;
+    reticle.enabled = true;
+    scope.enabled = false;
   }
 
   private void ZoomIn()
@@ -46,5 +53,7 @@ public class WeaponZoom : MonoBehaviour
     Camera.main.fieldOfView = AdsFov;
     FpsController.mouseLook.XSensitivity = zoomInSensitivity;
     FpsController.mouseLook.YSensitivity = zoomInSensitivity;
+    reticle.enabled = false;
+    scope.enabled = true;
   }
 }

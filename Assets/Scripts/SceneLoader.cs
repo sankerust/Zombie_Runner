@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-  float initialFov = Camera.main.fieldOfView;
+  //float initialFov = Camera.main.fieldOfView;
 public void Start() {
     Camera.main.fieldOfView = 65f;
 }

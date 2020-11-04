@@ -9,7 +9,6 @@ public class FootSteps : MonoBehaviour
     void Start()
     {
         cc = GetComponent<RigidbodyFirstPersonController>();
-        Debug.Log(cc);
     }
 
     // Update is called once per frame
